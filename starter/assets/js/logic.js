@@ -13,3 +13,12 @@
 
 
 //use function for start button that starts quiz when clicked.
+// make var for current q where the value will be questions array index
+
+function startQuiz() {
+    var currentQuestion = questions[currentQuestionIndex];
+
+    console.log(currentQuestion);
+}
+
+startQuiz();
