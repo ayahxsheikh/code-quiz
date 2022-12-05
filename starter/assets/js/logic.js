@@ -12,3 +12,4 @@
 // setInterval will repeat after time is passed in.
 
 
+//use function for start button that starts quiz when clicked.

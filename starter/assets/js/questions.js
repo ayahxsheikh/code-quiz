@@ -11,7 +11,7 @@
 var questions = [
     {
         title: 'What does the acronym JS mean?',
-        choices: ['javaStrings', 'jovaScript', 'JS', 'javaScript'],
+        choices: ['javaStrings', 'javoScript', 'JS', 'javaScript'],
         answer: 'JavaScript'
     },
     { 
@@ -31,3 +31,7 @@ var questions = [
         answer: 'objects'
     }
 ];
+
+//set up an index tracker 
+
+var currentQuestionIndex = 0;
