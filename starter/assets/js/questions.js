@@ -34,4 +34,4 @@ var questions = [
 
 //set up an index tracker 
 
-var currentQuestionIndex = 0;
+// var currentQuestionIndex = 0;

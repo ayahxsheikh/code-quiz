@@ -15,10 +15,18 @@
 //use function for start button that starts quiz when clicked.
 // make var for current q where the value will be questions array index
 
+var currentQuestionIndex = 0;
+var questionWrapper = document.querySelector('#questions');
+var questionTitle = document.querySelector('#question-title');
+
 function startQuiz() {
     var currentQuestion = questions[currentQuestionIndex];
+    questionTitle.innerText = currentQuestion.title;
+    //line 24 adds the question to the h2 element but its currently hidden, needs to show on button click.
 
     console.log(currentQuestion);
 }
 
 startQuiz();
+
+//to output this in the browser you need to target html ids question div and give them innerTexts for e.g. the current question title
