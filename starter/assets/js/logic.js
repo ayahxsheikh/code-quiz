@@ -1,17 +1,16 @@
 //Coding Logic 
 
-// when clicked start button must trigger the timer 
-// questions must show one at a time.
-// next question is ONLY shown when user clicks one of the option buttons for current question.
-// choices button does 2 things: sound for t/f and next q appears.
-
 //Gloabal Variables
 var time = document.querySelector('#time');
 var startBtn = document.querySelector('#start');
 var startScreen = document.querySelector('#start-screen');
+var currentQuestionIndex = 0;
+var divQuestions = document.querySelector('#questions');
+var questionTitle = document.querySelector('#question-title');
+var choicesOut = document.querySelector('#choices');
 
 
-//function for start button that starts quiz when clicked.
+//FUNCTION TO START.
 function startQuiz () {
     var start = startBtn.addEventListener('click', function(){
         console.log('start button clicked');
@@ -23,10 +22,7 @@ function startQuiz () {
 } startQuiz();
 
 
-var currentQuestionIndex = 0;
-var divQuestions = document.querySelector('#questions');
-var questionTitle = document.querySelector('#question-title');
-var choicesOut = document.querySelector('#choices');
+//FUNCTION TO DISPLAY Q'S:
 
 function showQuestions() {
     var currentQuestion = questions[currentQuestionIndex];
@@ -34,23 +30,22 @@ function showQuestions() {
     // console.log(h2); 
     
     var userChoices = currentQuestion.choices;
-    //need innerHtml as empty string to insert dynamic buttons
-    
+    // console.log(currentQuestion);
+    //innerHtml empty string to insert dynamic buttons
     choicesOut.innerHTML = ' ';
     
     for (var i = 0; i < userChoices.length; i++) {
         var choice = userChoices[i];
-        console.log(choice);
+        var isCorrect = currentQuestion.answer === choice;
+        // console.log(choice);
         
-        choicesOut.insertAdjacentHTML('beforeend',`<button>${choice}</button>`); 
-        //template literal to add choice dynamically
+        choicesOut.insertAdjacentHTML('beforeend',`<button data-correct=${isCorrect}>${choice}</button>`); 
+        console.log(isCorrect);
     }
-    // console.log(currentQuestion);
-    
     divQuestions.classList.remove('hide');
-}
+};
+        
 
-// showQuestions();
 
 
 
