@@ -8,6 +8,7 @@ var currentQuestionIndex = 0;
 var divQuestions = document.querySelector('#questions');
 var questionTitle = document.querySelector('#question-title');
 var choicesOut = document.querySelector('#choices');
+var feedback = document.querySelector('#feedback');
 
 
 //FUNCTION TO START.
@@ -37,27 +38,28 @@ function showQuestions() {
     for (var i = 0; i < userChoices.length; i++) {
         var choice = userChoices[i];
         var isCorrect = currentQuestion.answer === choice;
-        // console.log(choice);
+        // console.log(isCorrect);
         
         choicesOut.insertAdjacentHTML('beforeend',`<button data-correct=${isCorrect}>${choice}</button>`); 
-        console.log(isCorrect);
+        // console.log(currentQuestion.answer === choice);
     }
+    
     divQuestions.classList.remove('hide');
-
 } 
 
-//FUNCTION FOR CHECKING ANSWERS
- function checkAns(event){
+//FUNCTION FOR CHECKING ANSWERS:
+function checkAns(event){
     if (event.target) {
+        console.log(event.target);
         nextQuestion();
     }
- }
+
+    }
  choicesOut.addEventListener('click', checkAns);
 
-//EVENT LISTENR FOR CHOICES
-
+//FUNCTION FOR NEXT QUESTION:
 function nextQuestion (){
-    if (currentQuestionIndex < questions.length-1) {
+    if (currentQuestionIndex < questions.length-1) { //-1 to stop at last q
         currentQuestionIndex++;
         showQuestions();
     }
