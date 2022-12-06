@@ -9,8 +9,8 @@ var divQuestions = document.querySelector('#questions');
 var questionTitle = document.querySelector('#question-title');
 var choicesOut = document.querySelector('#choices');
 var feedback = document.querySelector('#feedback');
-var soundCorrect = new Audio("assets/sfx/correct.wav");
-var soundWrong = new Audio("assets/sfx/incorrect.wav");
+var soundCorrect = new Audio(src="assets/sfx/correct.wav");
+var soundIncorrect = new Audio(src="assets/sfx/incorrect.wav");
 
 
 //FUNCTION TO START.
@@ -51,12 +51,18 @@ function showQuestions() {
 
 //FUNCTION FOR CHECKING ANSWERS:
 function checkAns(event){
-    if (event.target.dataset.correct === 'true') {
-        // console.log(event.target);
+    if (event.target.dataset.correct === 'false') {
+        console.log('ans is wrong');
+        displayFeedback();
+        nextQuestion();
+
+    } else {
+        console.log('ans is correct!');
+        displayMessage();
         nextQuestion();
     }
 
-    }
+    };
  choicesOut.addEventListener('click', checkAns);
 
 //FUNCTION FOR NEXT QUESTION:
@@ -66,6 +72,11 @@ function nextQuestion (){
         showQuestions();
     }
 }
+
+//FUNCTION FOR DISPLAY FEEDBACK:
+ function displayFeedback(){
+    
+ }
 
 
 
