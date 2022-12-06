@@ -54,12 +54,12 @@ function checkAns(event){
     if (event.target.dataset.correct === 'false') {
         console.log('answer is wrong');
         displayFeedback();
-        nextQuestion();
+        // nextQuestion();
 
     } else {
         console.log('answer is correct!');
         displayFeedback();
-        nextQuestion();
+        // nextQuestion();
     }
 
     };
@@ -76,11 +76,12 @@ function nextQuestion (){
 
 //FUNCTION FOR DISPLAY FEEDBACK:
  function displayFeedback(){
-    if ('false'){
+    if (choicesOut.dataset.correct === 'false'){
         feedback.innerHTML = 'Incorrect';
-    } else if ('true') {
+    } else {
         feedback.innerHTML = 'Correct!';
     }
+
     feedback.classList.remove('hide');
  }
 
