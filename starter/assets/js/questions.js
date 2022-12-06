@@ -11,7 +11,7 @@
 var questions = [
     {
         title: 'What does the acronym JS mean?',
-        choices: ['javaStrings', 'javoScript', 'JS', 'javaScript'],
+        choices: ['javaStrings', 'javoScript', 'JS', 'JavaScript'],
         answer: 'JavaScript'
     },
     { 

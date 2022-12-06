@@ -9,6 +9,8 @@ var divQuestions = document.querySelector('#questions');
 var questionTitle = document.querySelector('#question-title');
 var choicesOut = document.querySelector('#choices');
 var feedback = document.querySelector('#feedback');
+var soundCorrect = new Audio("assets/sfx/correct.wav");
+var soundWrong = new Audio("assets/sfx/incorrect.wav");
 
 
 //FUNCTION TO START.
@@ -49,8 +51,8 @@ function showQuestions() {
 
 //FUNCTION FOR CHECKING ANSWERS:
 function checkAns(event){
-    if (event.target) {
-        console.log(event.target);
+    if (event.target.dataset.correct === 'true') {
+        // console.log(event.target);
         nextQuestion();
     }
 
