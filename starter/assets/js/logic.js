@@ -9,9 +9,14 @@
 var time = document.querySelector('#time');
 var startBtn = document.querySelector('#start');
 
-var start = startBtn.addEventListener('click', function(){
-    console.log('start button clicked');
-});
+
+function startQuiz () {
+    var start = startBtn.addEventListener('click', function(){
+        console.log('start button clicked');
+        showQuestions();
+    });
+    
+} startQuiz();
 
 var currentQuestionIndex = 0;
 var divQuestions = document.querySelector('#questions');
