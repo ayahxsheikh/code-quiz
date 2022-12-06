@@ -52,13 +52,13 @@ function showQuestions() {
 //FUNCTION FOR CHECKING ANSWERS:
 function checkAns(event){
     if (event.target.dataset.correct === 'false') {
-        console.log('ans is wrong');
+        console.log('answer is wrong');
         displayFeedback();
         nextQuestion();
 
     } else {
-        console.log('ans is correct!');
-        displayMessage();
+        console.log('answer is correct!');
+        displayFeedback();
         nextQuestion();
     }
 
@@ -67,7 +67,8 @@ function checkAns(event){
 
 //FUNCTION FOR NEXT QUESTION:
 function nextQuestion (){
-    if (currentQuestionIndex < questions.length-1) { //-1 to stop at last q
+    if (currentQuestionIndex < questions.length-1) { 
+        //-1 to stop at last q
         currentQuestionIndex++;
         showQuestions();
     }
@@ -75,7 +76,12 @@ function nextQuestion (){
 
 //FUNCTION FOR DISPLAY FEEDBACK:
  function displayFeedback(){
-    
+    if ('false'){
+        feedback.innerHTML = 'Incorrect';
+    } else if ('true') {
+        feedback.innerHTML = 'Correct!';
+    }
+    feedback.classList.remove('hide');
  }
 
 
