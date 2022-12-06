@@ -43,9 +43,25 @@ function showQuestions() {
         console.log(isCorrect);
     }
     divQuestions.classList.remove('hide');
-};
-        
 
+} 
+
+//FUNCTION FOR CHECKING ANSWERS
+ function checkAns(event){
+    if (event.target) {
+        nextQuestion();
+    }
+ }
+ choicesOut.addEventListener('click', checkAns);
+
+//EVENT LISTENR FOR CHOICES
+
+function nextQuestion (){
+    if (currentQuestionIndex < questions.length-1) {
+        currentQuestionIndex++;
+        showQuestions();
+    }
+}
 
 
 
