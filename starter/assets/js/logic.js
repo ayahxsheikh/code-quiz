@@ -5,45 +5,52 @@
 // next question is ONLY shown when user clicks one of the option buttons for current question.
 // choices button does 2 things: sound for t/f and next q appears.
 
-// function for start button that starts quiz when clicked.
+//Gloabal Variables
 var time = document.querySelector('#time');
 var startBtn = document.querySelector('#start');
 var startScreen = document.querySelector('#start-screen');
 
 
+//function for start button that starts quiz when clicked.
 function startQuiz () {
     var start = startBtn.addEventListener('click', function(){
         console.log('start button clicked');
         //clear start-screen before showQuestions
-        startScreen.className = 'hide';
+        startScreen.classList.add('hide');
         showQuestions();
     });
     
 } startQuiz();
+
 
 var currentQuestionIndex = 0;
 var divQuestions = document.querySelector('#questions');
 var questionTitle = document.querySelector('#question-title');
 var choicesOut = document.querySelector('#choices');
 
-
-// make var for current q where the value will be the questions array index
-
 function showQuestions() {
-    divQuestions.className = 'show';
     var currentQuestion = questions[currentQuestionIndex];
     var h2 = questionTitle.innerText = currentQuestion.title; 
-    // console.log(currentQuestion.title); 
+    // console.log(h2); 
     
-    var choices = currentQuestion.choicesOut;
-    // console.log(currentQuestion.);
+    var userChoices = currentQuestion.choices;
+    //need innerHtml as empty string to insert dynamic buttons
+    
+    choicesOut.innerHTML = ' ';
+    
+    for (var i = 0; i < userChoices.length; i++) {
+        var choice = userChoices[i];
+        console.log(choice);
+        
+        choicesOut.insertAdjacentHTML('beforeend',`<button>${choice}</button>`); 
+        //template literal to add choice dynamically
+    }
+    // console.log(currentQuestion);
+    
+    divQuestions.classList.remove('hide');
 }
 
 // showQuestions();
-
-
-
-
 
 
 
