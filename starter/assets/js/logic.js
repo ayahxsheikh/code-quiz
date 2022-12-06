@@ -53,16 +53,17 @@ function showQuestions() {
 function checkAns(event){
     if (event.target.dataset.correct === 'false') {
         console.log('answer is wrong');
-        displayFeedback();
+        // feedback.innerHTML = 'Incorrect';
         // nextQuestion();
 
     } else {
         console.log('answer is correct!');
-        displayFeedback();
+        // feedback.innerHTML = 'Correct!';
         // nextQuestion();
     }
-
+    feedback.classList.remove('hide');
     };
+    
  choicesOut.addEventListener('click', checkAns);
 
 //FUNCTION FOR NEXT QUESTION:
@@ -78,6 +79,7 @@ function nextQuestion (){
  function displayFeedback(){
     if (choicesOut.dataset.correct === 'false'){
         feedback.innerHTML = 'Incorrect';
+        
     } else {
         feedback.innerHTML = 'Correct!';
     }
