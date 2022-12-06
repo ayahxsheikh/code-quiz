@@ -6,6 +6,12 @@
 // choices button does 2 things: sound for t/f and next q appears.
 
 // function for start button that starts quiz when clicked.
+var time = document.querySelector('#time');
+var startBtn = document.querySelector('#start');
+
+var start = startBtn.addEventListener('click', function(){
+    console.log('start button clicked');
+});
 
 var currentQuestionIndex = 0;
 var divQuestions = document.querySelector('#questions');
