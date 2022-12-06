@@ -8,11 +8,14 @@
 // function for start button that starts quiz when clicked.
 var time = document.querySelector('#time');
 var startBtn = document.querySelector('#start');
+var startScreen = document.querySelector('#start-screen');
 
 
 function startQuiz () {
     var start = startBtn.addEventListener('click', function(){
         console.log('start button clicked');
+        //clear start-screen before showQuestions
+        startScreen.className = 'hide';
         showQuestions();
     });
     
