@@ -52,15 +52,13 @@ function showQuestions() {
 function checkAns(event){
     if (event.target.dataset.correct === 'false') {
         console.log('answer is wrong');
-        displayFeedback();
-        // feedback.innerHTML = 'Incorrect';
-        // nextQuestion();
+        displayFeedback(event.target.dataset.correct);
+        nextQuestion();
 
     } else {
         console.log('answer is correct!');
-        displayFeedback();
-        // feedback.innerHTML = 'Correct!';
-        // nextQuestion();
+        displayFeedback(event.target.dataset.correct);
+        nextQuestion();
     }
     feedback.classList.remove('hide');
     };
@@ -77,8 +75,8 @@ function nextQuestion (){
 }
 
 //FUNCTION FOR DISPLAY FEEDBACK:
- function displayFeedback(){
-    if (choicesOut.dataset.correct === 'false'){
+ function displayFeedback(clickedAns){  //para for ref passed in top
+    if (clickedAns === 'false'){
         feedback.innerHTML = 'Incorrect';
         
     } else {
