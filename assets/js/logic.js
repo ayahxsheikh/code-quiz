@@ -52,11 +52,13 @@ function showQuestions() {
 function checkAns(event){
     if (event.target.dataset.correct === 'false') {
         console.log('answer is wrong');
+        displayFeedback();
         // feedback.innerHTML = 'Incorrect';
         // nextQuestion();
 
     } else {
         console.log('answer is correct!');
+        displayFeedback();
         // feedback.innerHTML = 'Correct!';
         // nextQuestion();
     }
