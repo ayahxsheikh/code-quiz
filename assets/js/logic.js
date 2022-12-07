@@ -26,7 +26,6 @@ function startQuiz () {
 
 
 //FUNCTION TO DISPLAY Q'S:
-
 function showQuestions() {
     var currentQuestion = questions[currentQuestionIndex];
     var h2 = questionTitle.innerText = currentQuestion.title; 
