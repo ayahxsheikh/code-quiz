@@ -2,6 +2,7 @@
 
 //Gloabal Variables
 var time = document.querySelector('#time');
+var timer = 60;
 var startBtn = document.querySelector('#start');
 var startScreen = document.querySelector('#start-screen');
 var currentQuestionIndex = 0;
@@ -17,7 +18,7 @@ var soundIncorrect = new Audio(src="assets/sfx/incorrect.wav");
 function startQuiz () {
     var start = startBtn.addEventListener('click', function(){
         console.log('start button clicked');
-        //clear start-screen before showQuestions
+        setInterval() 
         startScreen.classList.add('hide');
         showQuestions();
     });
