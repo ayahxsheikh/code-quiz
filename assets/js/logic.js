@@ -29,12 +29,12 @@ function startQuiz () {
 } startQuiz();
 
 //SETTING TIMER:
-// var timeCounter = setInterval(function(){
-//     time = timer;
-//     timer--;
-//     // console.log('counting down');
+var timeCounter = setInterval(function(){
+    time = timer;
+    timer--;
+    // console.log('counting down');
     
-// },1000);
+},1000);
 
 
 
@@ -81,11 +81,14 @@ function checkAns(event){
 //FUNCTION FOR NEXT QUESTION:
 function nextQuestion (){
     if (currentQuestionIndex < questions.length-1) { 
-        //-1 to stop at last q
         currentQuestionIndex++;
         showQuestions();
-    } else {
 
+    } else {
+        divQuestions.classList.add('hide');
+        feedback.classList.add('hide');
+        endScreen.classList.remove('hide');
+        finalScore.innerHTML = timer;
     }
 }
 
