@@ -80,13 +80,13 @@ function checkAns(event){
 
 //FUNCTION FOR NEXT QUESTION:
 function nextQuestion (){
-    if (currentQuestionIndex < questions.length-1) { 
+    if (currentQuestionIndex < questions.length-1) {    
         currentQuestionIndex++;
         showQuestions();
 
     } else {
         divQuestions.classList.add('hide');
-        feedback.classList.add('hide');
+        // feedback.classList.add('hide');
         endScreen.classList.remove('hide');
         finalScore.innerHTML = timer;
     }
@@ -104,10 +104,10 @@ function nextQuestion (){
     feedback.classList.remove('hide');
  }
 
+//STORING INITIALS
 
 
 //subtract time from the timer if ans is incorrect 
 // quiz should end if all q's are answered or when time runs out
 
 //feedback will show if user gets qs t/f use setTimeOut
-// setInterval will repeat after time is passed in.
