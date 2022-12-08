@@ -12,18 +12,30 @@ var choicesOut = document.querySelector('#choices');
 var feedback = document.querySelector('#feedback');
 var soundCorrect = new Audio(src="assets/sfx/correct.wav");
 var soundIncorrect = new Audio(src="assets/sfx/incorrect.wav");
+var endScreen = document.querySelector('#end-screen');
+var finalScore = document.querySelector('#final-score');
+var initials = document.querySelector('#initials');
+var submitBtn = document.querySelector('#submit');
 
 
 //FUNCTION TO START.
 function startQuiz () {
     var start = startBtn.addEventListener('click', function(){
         console.log('start button clicked');
-        setInterval() 
         startScreen.classList.add('hide');
         showQuestions();
     });
     
 } startQuiz();
+
+//SETTING TIMER:
+// var timeCounter = setInterval(function(){
+//     time = timer;
+//     timer--;
+//     // console.log('counting down');
+    
+// },1000);
+
 
 
 //FUNCTION TO DISPLAY Q'S:
@@ -72,6 +84,8 @@ function nextQuestion (){
         //-1 to stop at last q
         currentQuestionIndex++;
         showQuestions();
+    } else {
+
     }
 }
 
