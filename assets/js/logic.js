@@ -78,6 +78,19 @@ function checkAns(event){
     
  choicesOut.addEventListener('click', checkAns);
 
+ 
+ //FUNCTION FOR DISPLAY FEEDBACK:
+ function displayFeedback(clickedAns){  //para for ref passed in top
+    if (clickedAns === 'false'){
+        feedback.innerHTML = 'Incorrect';
+        
+    } else {
+        feedback.innerHTML = 'Correct!';
+    }
+    
+    feedback.classList.remove('hide');
+}
+
 //FUNCTION FOR NEXT QUESTION:
 function nextQuestion (){
     if (currentQuestionIndex < questions.length-1) {    
@@ -91,20 +104,13 @@ function nextQuestion (){
         finalScore.innerHTML = timer;
     }
 }
-
-//FUNCTION FOR DISPLAY FEEDBACK:
- function displayFeedback(clickedAns){  //para for ref passed in top
-    if (clickedAns === 'false'){
-        feedback.innerHTML = 'Incorrect';
-        
-    } else {
-        feedback.innerHTML = 'Correct!';
-    }
-
-    feedback.classList.remove('hide');
- }
-
 //STORING INITIALS
+submitBtn.addEventListener('click', storeItem);
+
+function storeItem(){
+    var currentValue = initials.value;
+    var currentScore = finalScore;
+}
 
 
 //subtract time from the timer if ans is incorrect 

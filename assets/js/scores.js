@@ -7,5 +7,5 @@
 // make an array and an object of highschores {score: initials:}
 // use setItem and getItem as dyniamic values/strings to store user highscores
 
-//out put their score using final score id - getelementby
+//output their score using final score id - getelementby
 
