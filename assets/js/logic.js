@@ -16,27 +16,25 @@ var endScreen = document.querySelector('#end-screen');
 var finalScore = document.querySelector('#final-score');
 var initials = document.querySelector('#initials');
 var submitBtn = document.querySelector('#submit');
-
+var highScoreArray = [];
+var score = 0;
+var timeCounter;
 
 //FUNCTION TO START.
-function startQuiz () {
-    var start = startBtn.addEventListener('click', function(){
+
+    startBtn.addEventListener('click', function(){
         console.log('start button clicked');
         startScreen.classList.add('hide');
         showQuestions();
+        //SETTING TIMER:
+        timeCounter = setInterval(function(){
+            time.innerHTML = timer;
+            timer--;
+            // console.log('counting down');
+            
+        },1000);
     });
     
-} startQuiz();
-
-//SETTING TIMER:
-var timeCounter = setInterval(function(){
-    time = timer;
-    timer--;
-    // console.log('counting down');
-    
-},1000);
-
-
 
 //FUNCTION TO DISPLAY Q'S:
 function showQuestions() {
@@ -98,19 +96,31 @@ function nextQuestion (){
         showQuestions();
 
     } else {
+        clearInterval(timeCounter);
         divQuestions.classList.add('hide');
         // feedback.classList.add('hide');
         endScreen.classList.remove('hide');
         finalScore.innerHTML = timer;
+        score = timer;
     }
 }
 //STORING INITIALS
 submitBtn.addEventListener('click', storeItem);
 
+
 function storeItem(){
-    var currentValue = initials.value;
-    var currentScore = finalScore;
-}
+    var userInitials = initials.value
+    if(userInitials !== ''){
+        highScoreArray = JSON.parse(localStorage.getItem('highscore')) ||[];
+        var currentScore = {
+            initials: userInitials,
+            score: score
+        };
+        highScoreArray.push(currentScore)
+        localStorage.setItem('highscore', JSON.stringify(highScoreArray));
+    }
+    window.location.assign('highscores.html')
+};
 
 
 //subtract time from the timer if ans is incorrect 

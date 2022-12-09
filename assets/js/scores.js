@@ -9,3 +9,22 @@
 
 //output their score using final score id - getelementby
 
+console.log('connected');
+
+var scores = JSON.parse(localStorage.getItem('highscore')) || [];
+console.log(scores);
+
+
+var hiEl = document.querySelector('#highscores');
+var clear = document.querySelector('#clear');
+
+for (let i = 0; i < scores.length; i++){
+    console.log(scores[i].initials);
+    var li = document.createElement('li')
+    var userIn = document.createElement('span')
+    var scores = document.createElement('span')
+    userIn.textContent = scores[i].initials;
+    scores.textContent = scores[i].scores;
+    li.append(userIn, scores)
+    hiEl.append(li)
+}
