@@ -21,10 +21,13 @@ var clear = document.querySelector('#clear');
 for (let i = 0; i < scores.length; i++){
     console.log(scores[i].initials);
     var li = document.createElement('li')
+    //creating an li to display the initial and score
     var userIn = document.createElement('span')
     var scores = document.createElement('span')
+    //created the span so each score/initial is displaye as IN-line of the li
     userIn.textContent = scores[i].initials;
     scores.textContent = scores[i].scores;
+    //textContent is displaying info for the span
     li.append(userIn, scores)
     hiEl.append(li)
 }
